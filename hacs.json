@@ -1,0 +1,6 @@
+{
+  "name": "HACS - Custom card for DryFy Connect",
+  "render_readme": true,
+  "filename": "DryFyConnectCard.js",
+  "content_in_root": true
+}
