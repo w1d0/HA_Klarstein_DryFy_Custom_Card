@@ -1,4 +1,4 @@
-class ToggleWithGraphicalConfiguration extends HTMLElement {
+class DryFyConnectWithGraphicalConfiguration extends HTMLElement {
     // private properties
     _config;
     _hass;
@@ -202,7 +202,7 @@ class ToggleWithGraphicalConfiguration extends HTMLElement {
     }
 }
 
-class ToggleWithGraphicalConfigurationEditor extends HTMLElement {
+class DryFyConnectWithGraphicalConfigurationEditor extends HTMLElement {
     // private properties
     _config;
     _hass;
@@ -240,8 +240,8 @@ class ToggleWithGraphicalConfigurationEditor extends HTMLElement {
     doEditor() {
         this._elements.editor = document.createElement("form");
         this._elements.editor.innerHTML = `
-            <div class="row"><label class="label" for="header">Header:</label><input class="value" id="header"></input></div>
-            <div class="row"><label class="label" for="entity">Entity:</label><input class="value" id="entity"></input></div>
+            <div class="row"><label class="label" for="header">Header:</label><input class="value" id="header" /></div>
+            <div class="row"><label class="label" for="entity">Entity:</label><input class="value" id="entity" /></div>
         `;
     }
 
@@ -292,9 +292,9 @@ class ToggleWithGraphicalConfigurationEditor extends HTMLElement {
     doMessageForUpdate(changedEvent) {
         // this._config is readonly, copy needed
         const newConfig = Object.assign({}, this._config);
-        if (changedEvent.target.id == "header") {
+        if (changedEvent.target.id === "header") {
             newConfig.header = changedEvent.target.value;
-        } else if (changedEvent.target.id == "entity") {
+        } else if (changedEvent.target.id === "entity") {
             newConfig.entity = changedEvent.target.value;
         }
         const messageEvent = new CustomEvent("config-changed", {
@@ -307,17 +307,17 @@ class ToggleWithGraphicalConfigurationEditor extends HTMLElement {
 }
 
 customElements.define(
-    "toggle-with-graphical-configuration",
-    ToggleWithGraphicalConfiguration
+    "dryfy-humidifier-with-graphical-configuration",
+    DryFyConnectWithGraphicalConfiguration
 );
 customElements.define(
-    "toggle-with-graphical-configuration-editor",
-    ToggleWithGraphicalConfigurationEditor
+    "dryfy-humidifier-with-graphical-configuration-editor",
+    DryFyConnectWithGraphicalConfigurationEditor
 );
 
 window.customCards = window.customCards || [];
 window.customCards.push({
-    type: "toggle-with-graphical-configuration",
-    name: "Toggle with graphical configuration (Vanilla JS)",
-    description: "Turn an entity on and off",
+    type: "dryfy-humidifier-with-graphical-configuration",
+    name: "DryFy Connect Card",
+    description: "Card for DryFy Connect",
 });
