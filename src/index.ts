@@ -1,6 +1,12 @@
 import { DryFyConnectCard } from "./DryFyConnectCard";
 import { DryFyConnectEditor } from "./DryFyConnectEditor";
 
+declare global {
+    interface Window {
+        customCards: Array<Object>;
+    }
+}
+
 customElements.define(
     "dryfy-connect-card",
     DryFyConnectCard
