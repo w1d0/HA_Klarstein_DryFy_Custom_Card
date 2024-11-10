@@ -120,7 +120,7 @@ class $c005517c2d1cded1$export$631f4954d1ac45eb extends HTMLElement {
     }
     // card configuration
     static getConfigElement() {
-        return document.createElement("dryfy-humidifier-with-graphical-configuration");
+        return document.createElement("dryfy-connect-editor");
     }
     static getStubConfig() {
         return {

@@ -139,7 +139,7 @@ export class DryFyConnectCard extends HTMLElement {
 
     // card configuration
     static getConfigElement() {
-        return document.createElement("dryfy-humidifier-with-graphical-configuration");
+        return document.createElement("dryfy-connect-editor");
     }
 
     static getStubConfig() {
